@@ -1,7 +1,7 @@
 import requests
 import time
 from typing import Optional
-from config import Config
+from conf import Config
 
 class Trader:
     def __init__(self, api_key: str = None, api_secret: str = None, simulate: bool = True):
