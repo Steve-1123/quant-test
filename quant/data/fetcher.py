@@ -7,7 +7,6 @@ class DataFetcher:
     def __init__(self, api_key: str = None, api_secret: str = None):
         self.base_url = Config.DATA_API_URL  # 如 "https://api.example.com"
         self.api_key = api_key or Config.API_KEY
-        self.api_secret = api_secret or Config.API_SECRET
         self.headers = {'Authorization': f'Bearer {self.api_key}'}
 
     def fetch_ohlcv(self, symbol: str, timeframe: str, limit: int = 100, retries: int = 3) -> Dict[str, Any]:

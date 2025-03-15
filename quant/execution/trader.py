@@ -6,7 +6,6 @@ from conf import Config
 class Trader:
     def __init__(self, api_key: str = None, api_secret: str = None, simulate: bool = True):
         self.api_key = api_key or Config.API_KEY
-        self.api_secret = api_secret or Config.API_SECRET
         self.base_url = Config.TRADING_API_URL  # 如 "https://api.example.com"
         self.headers = {'Authorization': f'Bearer {self.api_key}'}
         self.simulate = simulate  # True为模拟交易，False为真实交易

@@ -5,13 +5,19 @@ from dotenv import load_dotenv
 # 加载 .env 文件中的环境变量
 load_dotenv()
 
+class OKXConfig:
+    SECRET_KEY = os.getenv('OKX_SECRET_KEY', 'default-secret-key')
+    API_KEY = os.getenv('OKX_API_KEY')
+    PASSPHRASE = os.getenv('OKX_PASSPHRASE')
+
 class Config:
     DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
-    SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
     DATA_API_URL = os.getenv('DATA_API_URL', 'https://api.example.com')
     TRADING_API_URL = os.getenv('TRADING_API_URL', 'https://trade.example.com')
+
+    SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
     API_KEY = os.getenv('API_KEY')
-    API_SECRET = os.getenv('API_SECRET')
+    PASSPHRASE = os.getenv('PASSPHRASE')
 
 class DevelopmentConfig(Config):
     DEBUG = True

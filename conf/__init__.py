@@ -1,3 +1,3 @@
-from .config import Config, DevelopmentConfig, ProductionConfig, TestingConfig
+from .config import Config, DevelopmentConfig, ProductionConfig, TestingConfig, OKXConfig
 
-__all__ = ['Config', 'DevelopmentConfig', 'ProductionConfig', 'TestingConfig']
+__all__ = ['Config', 'DevelopmentConfig', 'ProductionConfig', 'TestingConfig', 'OKXConfig']

@@ -7,6 +7,8 @@ from quant.strategies import STRATEGIES
 from quant.execution import Trader
 from quant.backtest import BacktestEngine, PerformanceAnalyzer
 
+from quant.utils.okx_http_client import OKXHttpClient
+
 app = Flask(__name__)
 app.config.from_object(get_config())  # 直接加载配置
 
@@ -47,13 +49,11 @@ def backtest(symbol, strategy_name):
     metrics = analyzer.calculate_metrics()
     return jsonify({'results': results, 'metrics': metrics})
 
-@app.route('/config')
-def show_config():
-    return jsonify({
-        'FLASK_ENV': os.getenv('FLASK_ENV', 'development'),
-        'DEBUG': app.config['DEBUG'],
-        'SECRET_KEY': app.config['SECRET_KEY']
-    })
+@app.route('/test_api')
+def test_api():
+    okx_client = OKXHttpClient('1')
+    resp = okx_client.get_account()
+    return resp
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=app.config['DEBUG'])
