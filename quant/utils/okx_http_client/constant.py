@@ -4,6 +4,8 @@ CLIENT_URL = 'https://www.okx.com'
 GET = 'GET'
 POST = 'POST'
 
+SIMULATED_FLAG = '1'
+
 CONTENT_TYPE = 'Content-Type'
 OK_ACCESS_KEY = 'OK-ACCESS-KEY'
 OK_ACCESS_SIGN = 'OK-ACCESS-SIGN'

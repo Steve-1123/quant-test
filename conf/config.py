@@ -9,6 +9,7 @@ class OKXConfig:
     SECRET_KEY = os.getenv('OKX_SECRET_KEY', 'default-secret-key')
     API_KEY = os.getenv('OKX_API_KEY')
     PASSPHRASE = os.getenv('OKX_PASSPHRASE')
+    FLAG=os.getenv('OKX_SIMULATED_FLAG')
 
 class Config:
     DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'

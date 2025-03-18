@@ -4,12 +4,11 @@ from .utils import *
 import json, requests
 
 class OKXHttpClient:
-    def __init__(self, flag):
+    def __init__(self):
+        self.FLAG = OKXConfig.FLAG
         self.API_KEY = OKXConfig.API_KEY
         self.SECRET_KEY = OKXConfig.SECRET_KEY
         self.PASSPHRASE = OKXConfig.PASSPHRASE
-        self.FLAG = flag
-
         self.CLIENT_URL = CLIENT_URL
 
     def _request(self, method, request_path, params):
